@@ -1,0 +1,7 @@
+{
+  "name": "AI Face Detection and Recognition",
+  "description": "An AI-powered application to detect and recognize faces in images and live video streams. Upload an image or use your webcam to see real-time face detection, landmark identification, and expression analysis. You can also register faces to enable recognition.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
