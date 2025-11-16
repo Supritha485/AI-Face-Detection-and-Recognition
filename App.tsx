@@ -125,18 +125,23 @@ const App: React.FC = () => {
     }
     setProcessingMessage(`Registering ${name}...`);
     try {
-      const tempImageUrl = URL.createObjectURL(imageFile);
+      const imageSrc = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result as string);
+        reader.onerror = (error) => reject(error);
+        reader.readAsDataURL(imageFile);
+      });
+      
       const tempImage = document.createElement('img');
-      tempImage.src = tempImageUrl;
+      tempImage.src = imageSrc;
       await new Promise(resolve => tempImage.onload = resolve);
       
       const detections = await faceapi.detectSingleFace(tempImage).withFaceLandmarks().withFaceDescriptor();
-      URL.revokeObjectURL(tempImageUrl);
 
       if (detections) {
         setRegisteredFaces(prev => [
           ...prev, 
-          { name, descriptors: [Array.from(detections.descriptor)] }
+          { name, descriptors: [Array.from(detections.descriptor)], imageSrc }
         ]);
         return { success: true, message: `${name} registered successfully!` };
       } else {

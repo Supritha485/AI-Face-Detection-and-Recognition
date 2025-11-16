@@ -141,8 +141,9 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
             {registeredFaces.length > 0 ? (
               <ul className="space-y-2 max-h-48 overflow-y-auto bg-gray-700/50 p-3 rounded-md">
                 {registeredFaces.map((face, index) => (
-                  <li key={index} className="bg-gray-900/50 p-2 rounded-md text-gray-300">
-                    {face.name}
+                  <li key={index} className="bg-gray-900/50 p-2 rounded-md text-gray-300 flex items-center gap-3">
+                    <img src={face.imageSrc} alt={face.name} className="w-10 h-10 rounded-full object-cover border-2 border-cyan-500" />
+                    <span className="font-medium">{face.name}</span>
                   </li>
                 ))}
               </ul>
