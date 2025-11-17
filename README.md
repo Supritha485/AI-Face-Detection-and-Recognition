@@ -1,13 +1,12 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+<div align="center"><img width="1897" height="945" alt="image2" src="https://github.com/user-attachments/assets/e55bba20-d957-4027-a827-50f0df7e5d78" />
+
 </div>
 
 # Run and deploy your AI Studio app
 
 This contains everything you need to run your app locally.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1GsNVjdjzX8sGsZC5hf7SL7rGh2cJN19Q
-
+View your app in Netlify: (https://aifacerecognition.netlify.app/)
 ## Run Locally
 
 **Prerequisites:**  Node.js
